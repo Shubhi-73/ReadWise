@@ -1,0 +1,46 @@
+<%- include("partials/header"); -%>
+    <style media="screen">
+    body{
+      background-color: #FEFAE0;
+      /* align-content: center; */
+    }
+      .form-center{
+        margin: 5% 30%;
+        padding: 5rem;
+        text-align: center;
+        background-color: #CCD5AE;
+        border: 4px solid #FAEDCD;
+        border-radius: 15px;
+      }
+
+      .label-div{
+        font-family: "Montserrat-Black";
+        font-size: 2.0rem;
+        padding: 1.5rem 2rem;
+      }
+
+      .btn{
+        margin-top: 4rem;
+        background-color: #FEFAE0;
+        color: #000000;
+      }
+
+
+    </style>
+    <form class="form-center" action="/" method="post">
+          <div class="label-div">
+              <label for="titleOfZheBook">Title</label>
+          </div>
+              <input type="text" class="form-control" id="titleOfZheBook" placeholder="It could be an author, a title of a book, or a speaker." name="title">
+
+          <div class="form-group">
+            <div class="label-div">
+                <label for="exampleFormControlTextarea1">Highlight of the book</label>
+            </div>
+              <input name="highlight" class="form-control" id="exampleFormControlTextarea1" placeholder="Add notes..." rows="3"></input>
+           </div>
+       <button type="submit" class="button btn btn-primary " name="button">Add to my list!</button>
+      <!-- <button type="submit" name="button">Add to the list</button> -->
+</form>
+  </body>
+</html>
