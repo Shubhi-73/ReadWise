@@ -36,6 +36,14 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost:27017/ReadwiseDB", {
   useNewUrlParser: true
 });
+//--------------------------------------------------------------
+
+const userSchema = {
+  email: String,
+  password: String
+}
+
+
 const noteSchema = {
   index: Number,
   book: String,
@@ -43,32 +51,8 @@ const noteSchema = {
 };
 
 const Note = mongoose.model("Note", noteSchema); //singular version of the collection
-
+const User = mongoose.model("User", userSchema); //singular version of the collection
 //------------------------------------------------------------------
-
-// const note1 = new Note({
-//   index: 1,
-//   book: "Think Again",
-//   content: "One of my biggest pet peeves is feigned knowledge, where people pretend to know things they don’t. It bothers me so much that at this very moment I’m writing an entire book about it. - Adam Grant"
-// });
-//
-// note1.save();
-//
-// const note2 = new Note({
-//   index: 2,
-//   book: "Psychology of Money",
-//   content: "Nothing is as good or bad as it seems - NYU prof. Scott Galloway"
-// });
-//
-// note2.save();
-//
-// const note3 = new Note({
-//   index: 3,
-//   book: "Mindset",
-//   content: "In one world, effort is a bad thing. It, like failure, means you’re not smart or talented. If you were, you wouldn’t need effort. In the other world, effort is what makes you smart or talented."
-// });
-//
-// note3.save();
 
 //------------------------------------------
 
@@ -207,6 +191,79 @@ app.get("/display", function(req,res){
 
 app.get("/compose", function(req,res){
   res.render("compose")
+});
+
+//for new users
+app.get("/register", function(req,res){
+  res.render("register")
+});
+
+//for existing users
+app.get("/login", function(req,res){
+  res.render("login")
+});
+
+app.get("/loginError", function(req,res){
+  res.render("loginError")
+});
+
+
+
+app.post("/login", function(req,res){
+
+const userName = req.body.emailInput;
+const password = req.body.passwordInput;
+
+User.findOne({email: userName}, function(err, foundUser){
+
+if(err){
+  console.log("error at finding user"+err);
+}
+else{
+  if(foundUser){
+    if(foundUser.password === password){
+      console.log("PASSWORD MATCHED")
+      res.redirect("/");
+    }
+    else{
+      console.log("INCORRECT PASSWORD")
+      res.redirect("loginError");
+    }
+  }
+  else{ //incorrect email
+    res.redirect("loginError");
+  }
+}
+
+
+});
+
+
+});
+
+app.post("/register", function(req,res){
+
+  const newUser = new User({
+    email: req.body.emailInput,
+    password: req.body.passwordInput
+  });
+
+  newUser.save(function(err){
+
+    if(err){
+      console.log("error in register")
+    }
+    else{
+
+      //initialize new collection
+
+
+
+        res.redirect("/");
+    }
+  })
+
+
 });
 
 app.post("/", function(req,res)
