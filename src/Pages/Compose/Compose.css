@@ -1,0 +1,73 @@
+/* ComposePage.css */
+.compose-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #CDF5FD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.compose-page h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    color: #333;
+}
+
+.compose-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compose-form input,
+.compose-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.compose-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.compose-form button:hover {
+    background-color: #0056b3;
+}
+
+/* .content-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
+
+.content-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-item h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.content-item p {
+    font-size: 16px;
+    color: #555;
+}
