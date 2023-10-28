@@ -1,0 +1,36 @@
+/* components/TagPage.css */
+.tag-page {
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+select {
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.quote-list {
+    text-align: left;
+}
+
+.quote-list div {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
