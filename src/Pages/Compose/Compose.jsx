@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Compose.css';
 import axios from 'axios';
+import Navbar from '../../Component/Navbar/Navbar';
 
 function ComposePage() {
     /* const [title, setTitle] = useState('');
@@ -69,7 +70,9 @@ function ComposePage() {
     };
 
     return (
-
+         <div>
+            <Navbar />
+             
         <div className="compose-page">
             <h2>Compose Page</h2>
             <div className="compose-form">
@@ -100,6 +103,7 @@ function ComposePage() {
             </div> */}
 
         </div>
+    </div>
 
     );
 }
