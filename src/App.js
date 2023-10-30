@@ -15,8 +15,8 @@ function App() {
       <BrowserRouter>
     
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<LoginSignUp />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<LoginSignUp />} />
           <Route path='/Compose' element={<ComposePage />} />
           <Route path='/Collection' element={<CollectionPage />} />
           <Route path="/all-highlights" element={<AllHighlightsPage />} />
