@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import './Compose.css';
 import axios from 'axios';
-import Navbar from '../../Component/Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Navbar from './Navbar';
 
 function ComposePage() {
     /* const [title, setTitle] = useState('');
       const [description, setDescription] = useState('');
       const [contentList, setContentList] = useState([]);
-  
+
       const handleAddContent = () => {
           if (title && description) {
               // Create a new content item and add it to the list
               const newContent = { title, description };
               setContentList([...contentList, newContent]);
-  
+
               // Clear the input fields
               setTitle('');
               setDescription('');
           }
       };
-  
+
        const [ComposeFormData, setComposeFormData] = useState({ title: '', description: '' });
-   
+
        const handleSubmit = async (e) => {
            e.preventDefault();
-   
+
            try {
                const response = await axios.post('http://localhost:8000/sendData', ComposeFormData);
                console.log(response.data);
@@ -33,25 +35,25 @@ function ComposePage() {
                console.error(error);
                // Handle the error (e.g., show an error message to the user).
            }
-       }; 
-   
+       };
+
        const handleChange = (e) => {
            setComposeFormData({ ...ComposeFormData, [e.target.name]: e.target.value });
        }; */
 
-    const [ComposeFormData, setComposeFormData] = useState({ title: '', description: '' });
+    const [ComposeFormData, setComposeFormData] = useState({ title: '', description: '',tag: ''});
     const [contentList, setContentList] = useState([]);
 
     const handleAddContent = (e) => {
         e.preventDefault();
 
-        if (ComposeFormData.title && ComposeFormData.description) {
+        if (ComposeFormData.title && ComposeFormData.description && ComposeFormData.tag) {
             // Create a new content item and add it to the list
-            const newContent = { title: ComposeFormData.title, description: ComposeFormData.description };
+            const newContent = { title: ComposeFormData.title, description: ComposeFormData.description, tag: ComposeFormData.tag};
             setContentList([...contentList, newContent]);
 
             // Clear the form data
-            setComposeFormData({ title: '', description: '' });
+            setComposeFormData({ title: '', description: '', tag: ''});
         }
     };
 
@@ -70,41 +72,39 @@ function ComposePage() {
     };
 
     return (
-         <div>
+          <div>
+
             <Navbar />
-             
-        <div className="compose-page">
+
+
+
             <h2>Compose Page</h2>
-            <div className="compose-form">
+            <div class="compose-form">
                 <form className="compose-form" onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        // name="title"
+
                         placeholder="Title"
                         value={ComposeFormData.title}
                         onChange={(e) => setComposeFormData({ ...ComposeFormData, title: e.target.value })}
                     />
                     <textarea
-                        //  name="description"
+
                         placeholder="Description"
                         value={ComposeFormData.description}
                         onChange={(e) => setComposeFormData({ ...ComposeFormData, description: e.target.value })}
                     />
-                    <button type="submit" onClick={handleAddContent}>Add</button>
+                    <input
+                        type="text"
+
+                        placeholder="Tag"
+                        value={ComposeFormData.title}
+                        onChange={(e) => setComposeFormData({ ...ComposeFormData, tag: e.target.value })}
+                    />
+                    <button type="submit">Add</button>
                 </form>
             </div>
-            {/* <div className="content-list">
-                {contentList.map((content, index) => (
-                    <div key={index} className="content-item">
-                        <h3>{content.title}</h3>
-                        <p>{content.description}</p>
-                    </div>
-                ))}
-            </div> */}
-
-        </div>
-    </div>
-
+            </div>
     );
 }
 
