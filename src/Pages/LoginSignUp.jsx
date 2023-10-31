@@ -42,7 +42,7 @@ function LoginSignUp() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/sendSingUpData', signupData);
+            const response = await axios.post('http://localhost:8000/sendSignUpData', signupData);
             console.log(response.data);
 
 
