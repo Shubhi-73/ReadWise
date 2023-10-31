@@ -25,7 +25,8 @@ const dailyQuoteSchema = {
   user: String,
   date: String,
   book: String,
-  content: String
+  content: String,
+  tag: String
 };
 
 const Quote = mongoose.model("Quote", dailyQuoteSchema); //singular version of the collection
