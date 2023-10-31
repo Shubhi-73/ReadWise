@@ -1,21 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Collection.css';
-import Navbar from '../../Component/Navbar/Navbar';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function Collection() {
-    return (
-        <div>
-            <Navbar />
-        <div className="home-page">
-            <h2>All Highlights</h2>
-            <Link to="/all-highlights">See all highlights</Link>
+import Navbar from './Pages/Navbar';
+import Login from './Pages/Login';
+import Home from './Pages/Home';
+import Collection from './Pages/Collection';
+import Compose from './Pages/Compose';
 
-            <h2>Tags</h2>
-            <Link to="/tags">See by tags</Link>
-        </div>
-     </div>
-    );
+function App() {
+  const [message, setMessage] = useState("");
+
+
+  useEffect(() => {
+    fetch("http://localhost:8000")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message))
+  }, []);
+
+  return (
+    <div>
+    <div className="App">
+    <BrowserRouter>
+    
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/Compose' element={<Compose />} />
+        <Route path='/Collection' element={<Collection />} />
+        <Route path='/' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+    </div>
+
+
+      <h1>Hi! {message}</h1>
+    </div>
+  );
 }
 
-export default Collection;
+export default App
