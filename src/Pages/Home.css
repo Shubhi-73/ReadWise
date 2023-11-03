@@ -1,0 +1,42 @@
+/* Style for the overall container */
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #F4EEFF;
+  border: 1px solid #DCD6F7;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the greeting */
+h1 {
+  font-size: 24px;
+  color: #424874;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Style for the title and content */
+p {
+  font-size: 18px; /* Adjust the font size as needed */
+  color: #424874; /* Match the color scheme */
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* Style for the special greeting */
+.special-greeting {
+  font-size: 28px;
+  color: #A6B1E1; /* Match the color scheme */
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Style for the Navbar (assuming it's imported and used within the Home component) */
+.Navbar {
+  /* Add styles for the Navbar component */
+}
