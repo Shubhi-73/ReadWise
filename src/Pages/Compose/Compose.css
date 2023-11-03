@@ -1,73 +1,60 @@
-/* ComposePage.css */
-.compose-page {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #CDF5FD;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: center;
+/* Style for the main container */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #F4EEFF;
+  padding: 20px;
 }
 
-.compose-page h2 {
-    font-size: 24px;
-    margin: 0 0 20px;
-    color: #333;
+/* Style for the page title */
+h2 {
+  font-size: 28px;
+  color: #424874;
+  margin-bottom: 20px;
 }
 
+/* Style for the compose form container */
 .compose-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #DCD6F7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
-.compose-form input,
-.compose-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+/* Style for form inputs and textarea */
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #A6B1E1;
+  border-radius: 6px;
 }
 
-.compose-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #424874;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
 }
 
-.compose-form button:hover {
-    background-color: #0056b3;
+/* Style for button hover effect */
+button[type="submit"]:hover {
+  background-color: #A6B1E1;
+  color: #fff;
 }
 
-/* .content-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
-
-.content-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px 0;
-    text-align: left;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.content-item h3 {
-    font-size: 20px;
-    margin: 0 0 10px;
-    color: #333;
-}
-
-.content-item p {
-    font-size: 16px;
-    color: #555;
+/* Style for the status message */
+h6#statusOfSubmit {
+  font-size: 20px; /* Increase the font size */
+  color: #A6B1E1; /* Change the color */
+  text-align: center;
 }
