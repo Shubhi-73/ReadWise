@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './Home.css';
-import Navbar from './Navbar';
-
+import "./Compose/Home.css";
+import Navbar from '../Component/Navbar/Navbar';
+import ParentInfo from "../Component/Info/ParentInfo";
+import Footer from "../Component/Footer/Footer";
 
 const Home = () => {
   //
@@ -24,11 +25,16 @@ const Home = () => {
   return (
 <div className="Home">
   <Navbar />
-  <h1>Welcome, {user}!</h1>
-  <p>{title}</p>
-  <p>{content}</p>
-  <p className="special-greeting">Explore Your Quotes</p>
+  <h1 id="h1">Welcome, Snigdhaaa!</h1>
+  <div className="welcome">
+  
+  <p id="title"><b>Mindset</b></p>
+  <p id="content">In one world, effort is a bad thing. It, like failure, means you’re not smart or talented. If you were, you wouldn’t need effort. In the other world, effort is what makes you smart or talented.</p>
+</div>
+<ParentInfo />
+<Footer />
 </div>
 );
 }
 export default Home
+
