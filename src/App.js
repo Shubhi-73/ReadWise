@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Navbar from './Pages/Navbar';
-import Login from './Pages/Login';
+import './App.css';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import Collection from './Pages/Collection';
-import Compose from './Pages/Compose';
+import LoginSignUp from './Pages/LoginSignUp';
+import ComposePage from './Pages/Compose/Compose';
+import CollectionPage from './Pages/Collection/Collection';
+import FAQs from './Pages/AboutUs/FAQ';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-
-  useEffect(() => {
-    fetch("http://localhost:8000")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-  }, []);
-
   return (
     <div>
-    <div className="App">
-    <BrowserRouter>
-    
-      <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/Compose' element={<Compose />} />
-        <Route path='/Collection' element={<Collection />} />
-        <Route path='/' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-    </div>
+      <BrowserRouter>
+     
+        <Routes>
+          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<LoginSignUp />} />
+          <Route path='/Compose' element={<ComposePage />} />
+          <Route path='/Collection' element={<CollectionPage />} />
+          <Route path='/Faq' element={<FAQs />} />
 
-
-      <h1>Hi! {message}</h1>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
+export default App;
 
-export default App
