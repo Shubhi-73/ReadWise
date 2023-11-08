@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './Compose.css';
+import Navbar  from '../../Component/Navbar/Navbar';
+import Footer  from '../../Component/Footer/Footer';
 import axios from 'axios';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import Navbar from './Navbar';
 
 function ComposePage() {
     /* const [title, setTitle] = useState('');
@@ -72,11 +71,10 @@ function ComposePage() {
     };
 
     return (
-          <div>
+          <div class="compose">
 
             <Navbar />
-
-
+            <div class="compose-page">
 
             <h2>Compose Page</h2>
             <div class="compose-form">
@@ -104,6 +102,8 @@ function ComposePage() {
                     <button type="submit">Add</button>
                 </form>
             </div>
+            </div>
+            <Footer />
             </div>
     );
 }
