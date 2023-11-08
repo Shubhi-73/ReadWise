@@ -1,48 +1,81 @@
-/* Style for the overall container */
-.FilterPage {
-  display: flex;
-  flex-direction: column;
+/* Collection.css */
+.collectionPage{
+  background-color: #D2E0FB;
+  height: 40em;
+}
+.collection {
+  color: white;
+  width:700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #4A55A2;
   align-items: center;
-  margin: 2rem;
-  font-family: Arial, sans-serif;
-  background-color: #F4EEFF;
-  border: 1px solid #DCD6F7;
+  text-align: center;
   border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+ 
 }
 
-/* Style for the heading */
 h2 {
   font-size: 24px;
-  color: #424874;
-  margin: 0;
-  padding: 1rem;
+  margin-bottom: 16px;
 }
 
-/* Style for the tag filtering select input */
-select#tagValue {
-  padding: 0.5rem;
-  margin: 0.25rem 0;
-  border: 1px solid #DCD6F7;
+#tagValue {
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Style for the list container */
-ul {
+#ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-/* Style for list items */
-li {
+#li {
+  margin-bottom: 16px;
   background-color: #fff;
-  border: 1px solid #DCD6F7;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 1rem;
-  margin: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  color: black;
+
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(50px); /* Initial position offscreen */
+  animation: slideIn 1.3s ease-in-out forwards; /* Apply the animation */
+} 
+
+.heading {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* Add any additional styles specific to this component here */
+.content {
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
