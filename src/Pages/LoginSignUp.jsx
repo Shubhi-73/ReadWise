@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './LoginSignUp.css';
 
 
 
@@ -58,6 +59,8 @@ function LoginSignUp() {
 
 
     return (
+        <body id="body">
+        <div ><p id="heading"><b>QuoteVault</b></p>
         <div className="App">
             <h1>{activeForm === 'login' ? 'Login' : 'Signup'}</h1>
             {activeForm === 'login' ? (
@@ -74,8 +77,10 @@ function LoginSignUp() {
                     <button type="submit">Signup</button>
                 </form>
             )}
-            <button onClick={handleFormSwitch}>{activeForm === 'login' ? 'Switch to Signup' : 'Switch to Login'}</button>
+            <button id="switch" onClick={handleFormSwitch}>{activeForm === 'login' ? 'Switch to Signup' : 'Switch to Login'}</button>
         </div>
+        </div>
+        </body>
     );
 }
 
